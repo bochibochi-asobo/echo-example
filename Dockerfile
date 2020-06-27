@@ -4,14 +4,11 @@ FROM golang:1.15-rc-alpine
 # 作業ディレクトリを指定
 WORKDIR /go/src/app
 
-COPY . .
-
 # アプリケーションをビルド
 RUN apk add --no-cache \
   alpine-sdk \
   git \
   && go get github.com/labstack/echo \
-  && go get github.com/oxequa/realize \
-  && go build -o my-echo
+  && go get github.com/oxequa/realize
 
-CMD ["./my-echo"]
+CMD [ "realize", "start", "--run" ]

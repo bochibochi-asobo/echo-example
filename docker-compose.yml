@@ -1,11 +1,10 @@
 version: '3'
+
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - ./:/go/src/app
+  go:
+    build: .
     ports:
-      - "1323:1323"
-    command: realize start
+      - 1323:1323
+    volumes:
+      - ./:/test
+    working_dir: /test

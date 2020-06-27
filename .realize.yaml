@@ -3,18 +3,20 @@ settings:
     force: false
     interval: 0s
 schema:
-  - name: host-reload-sample
+  - name: my-echo-example
     path: .
     commands:
       install:
+        status: true
+      build:
         status: true
       run:
         status: true
     watcher:
       extensions:
         - go
-      paths: // watched paths
+      paths:
         - /
-      ignore_paths:  // ignored paths
+      ignore_paths:
         - vendor
         - .git
