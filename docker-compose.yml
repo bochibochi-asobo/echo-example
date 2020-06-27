@@ -1,6 +1,11 @@
 version: '3'
 services:
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/go/src/app
     ports:
       - "1323:1323"
+    command: realize start
