@@ -35,7 +35,10 @@ Hey, Guys!
 ```
 
 ### 2. DockerCompose
-
+docker-compose で起動する
+```
+$ docker-compose up -d
+```
 
 ### 3. hot reload を試す
 
